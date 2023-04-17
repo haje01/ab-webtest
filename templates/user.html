@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ user_id }}</title>
+    </head>
+    <body>
+        <h1>{{ user_id }}</h1>
+        <script>
+        (function(a_,i_,r_,_b,_r,_i,_d,_g,_e){if(!a_[_b]){var d={queue:[],get isSDKEnabled(){return!1}};_r.concat(_i).forEach(function(a){var e=a.split("."),q=e.pop();e.reduce(function(m,n){return m[n]=m[n]||{}},d)[q]=function(){d.queue.push([a,arguments])}});a_[_b]=d;var f=i_.getElementsByTagName(r_)[0],c=i_.createElement(r_);c.onerror=function(){d.queue.filter(function(a){return 0<=_i.indexOf(a[0])}).forEach(function(a){a=a[1];a=a[a.length-1];"function"===typeof a&&a("error occur when load airbridge")})};c.async=1;c.src="//static.airbridge.io/sdk/latest/airbridge.min.js";"complete"===i_.readyState?f.parentNode.insertBefore(c,f):i_.addEventListener("readystatechange",function e(){"complete"===i_.readyState&&(i_.removeEventListener("readystatechange",e),f.parentNode.insertBefore(c,f))})}})(window,document,"script","airbridge","init startTracking fetchResource setBanner setDownload setDownloads openDeeplink setDeeplinks sendWeb setUserAgent setUserAlias addUserAlias setMobileAppData setUserId setUserEmail setUserPhone setUserAttributes clearUser setDeviceAlias removeDeviceAlias clearDeviceAlias setDeviceIFV setDeviceIFA setDeviceGAID events.send events.signIn events.signUp events.signOut events.purchased events.addedToCart events.productDetailsViewEvent events.homeViewEvent events.productListViewEvent events.searchResultViewEvent".split(" "),["events.wait","createTouchpoint"]);
+
+        // Web SDK 초기화
+        airbridge.init({
+            app: '{{ app_name }}',
+            webToken: '{{ sdk_token}}',
+            user: {
+                externalUserID: '{{ user_id }}',
+                externalUserEmail: '{{ user_email }}',
+                externalUserPhone: '{{ user_phone }}',
+                attributes: {
+                    age_group: {{ age_group }},
+                    gender: '{{ gender }}'
+                }
+            }
+        });
+
+        // 이벤트 별 순회
+        {% for event in events %}
+        setTimeout(() => {
+            airbridge.events.send('{{ event.category }}', {
+                semanticAttributes:{{ event.params | tojson }}
+            });
+            console.log("Events: {{ event.category }} sent.")
+        }, {{ loop.index }} * 1000);
+        
+        {% endfor %}
+        </script>
+    </body>
+</html>
+

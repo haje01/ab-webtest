@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ user_id }}</title>
+    </head>
+    <body>
+        <h1>Airbridge Web SDK Test Users</h1>
+        <ul>
+            {% for user in users %}
+            <li><a href="tmp/{{ user.user_id }}.html">{{ user.user_id }}</a></li>
+            {% endfor %}
+        </ul>
+        <button onclick="openAllLinks();">Open All</button>
+        <script>
+        function openAllLinks() {
+            const links = document.querySelectorAll('a');
+            for (const link of links) {
+                console.log('link', link.href)
+                window.open(link.href, '_blank');
+            }
+        }
+        </script>
+    </body>
+</html>
+
