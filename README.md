@@ -37,6 +37,6 @@ skaffold dev  # 또는 skaffold deploy
 
 ## 설명
 
-- 클라이언트용 컨테이너 이미지에는 Playwright 를 통해 Headless Chrome 이 설치
-- 클라이언트는 가짜 유저 정보 생성 후 [Playwright](https://playwright.dev/) 를 통해 Flask 서버에 이벤트 호출 요청 
+- 클라이언트용 컨테이너 이미지에는 [Playwright](https://playwright.dev/) 를 통해 Headless Chrome 이 설치
+- 클라이언트는 가짜 유저 정보 생성 후 Playwright 를 통해 Flask 서버에 이벤트 호출 요청 
 - Flask 서버는 Airbridge WebSDK 을 이용한 이벤트 호출 페이지를 반환
