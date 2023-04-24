@@ -4,7 +4,7 @@ import random
 from faker import Faker 
 from playwright.async_api import async_playwright
 
-USER_CNT = 20
+USER_CNT = 100
 
 fake = Faker()
 
@@ -22,9 +22,9 @@ def handle_console_msg(msg):
 
 async def visit(game_id, plat_id, email):
     print(f"visit {game_id} {plat_id}")
-    sleep = random.randint(0, 40)
+    sleep = random.randint(0, 50)
     await asyncio.sleep(sleep)
-    
+
     async with async_playwright() as p:
         browser = await p.chromium.launch()
         page = await browser.new_page()
