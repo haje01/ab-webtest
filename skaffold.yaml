@@ -1,0 +1,11 @@
+apiVersion: skaffold/v4beta3 
+kind: Config
+build:
+  artifacts:
+  - image: server
+    context: server
+  - image: client
+    context: client
+manifests:
+  rawYaml:
+    - k8s/*.yaml
