@@ -17,6 +17,17 @@ spec:
         image: server
         ports:
         - containerPort: 5000
+        env:
+        - name: ABTEST_APP
+          valueFrom:
+            secretKeyRef:
+              name: abtest
+              key: app
+        - name: ABTEST_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: abtest
+              key: token
 ---
 apiVersion: v1
 kind: Service

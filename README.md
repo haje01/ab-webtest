@@ -3,18 +3,34 @@ Airbridge Web SDK 를 이용한 테스트
 
 ## 준비 및 실행
 
-설치할 것: 
+1. 설치: 
 - [minikube](https://minikube.sigs.k8s.io/docs/start/)
 - [skaffold](https://skaffold.dev/)
 
-환경 변수 설정:
-- `ABTEST_APP` - 앱 이름
-- `ABTEST_TOKEN` - 앱의 Web SDK 토큰
+2. Airbridge 앱 정보를 Base64 인코딩:
 
-실행 방법:
-
+```sh
+echo -n '<앱 이름>' | base64
+echo -n '<WebSDK 토큰>' | base64
 ```
-skafffold dev
+
+3. 2 의 출력물로 Secret 생성:
+```yaml
+kubectl apply -f - <<EOF 
+apiVersion: v1
+kind: Secret 
+metadata:
+  name: abtest
+type: Opaque 
+data:
+    app: <인코딩된 앱 이름>
+    token: <인코딩된 WebSDK 토큰>
+EOF
+```
+
+Skaffold 로 실행:
+```
+skaffold deploy
 ```
 
 ## 설명

@@ -5,9 +5,11 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 APP_NAME = os.environ.get('ABTEST_APP')
+print(f'APP_NAME: {APP_NAME}')
 assert APP_NAME is not None
 SDK_TOKEN = os.environ.get('ABTEST_TOKEN')
 assert SDK_TOKEN is not None
+print(f'SDK_TOKEN: {SDK_TOKEN}')
 
 events = [
     # 로그인

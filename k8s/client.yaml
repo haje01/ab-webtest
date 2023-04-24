@@ -6,6 +6,7 @@ spec:
   schedule: "*/1 * * * *"
   jobTemplate:
     spec:
+      ttlSecondsAfterFinished: 600  # 10 분 후 삭제
       template:
         spec:
           containers:
