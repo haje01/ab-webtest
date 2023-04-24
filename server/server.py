@@ -163,7 +163,6 @@ def user():
     game_id = request.args.get('game_id')
     plat_id = request.args.get('plat_id')
     email = request.args.get('email')
-    print(request.args)
     return render_template('user.html', app_name=APP_NAME, sdk_token=SDK_TOKEN,
                            game_id=game_id, plat_id=plat_id, email=email, 
                            age_group='30', gender='Male', events=events)

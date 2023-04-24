@@ -6,10 +6,10 @@ spec:
   schedule: "*/1 * * * *"
   jobTemplate:
     spec:
-      ttlSecondsAfterFinished: 600  # 10 분 후 삭제
+      ttlSecondsAfterFinished: 0  # 작업 종료 후 바로 삭제
       template:
         spec:
           containers:
           - name: client
             image: client
-          restartPolicy: OnFailure
+          restartPolicy: Never

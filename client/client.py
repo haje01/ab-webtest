@@ -4,7 +4,7 @@ import random
 from faker import Faker 
 from playwright.async_api import async_playwright
 
-USER_CNT = 100
+USER_CNT = 50
 
 fake = Faker()
 
