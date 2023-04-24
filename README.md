@@ -30,7 +30,7 @@ EOF
 
 Skaffold 로 실행:
 ```bash
-skaffold deploy
+skaffold dev  # 또는 skaffold deploy
 ```
 
 ## 설명
