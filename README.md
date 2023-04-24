@@ -4,6 +4,8 @@ Airbridge Web SDK 를 이용한 테스트
 ## 준비 및 실행
 
 1. 설치: 
+- [Docker](https://docs.docker.com/engine/install/ubuntu/)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 - [minikube](https://minikube.sigs.k8s.io/docs/start/)
 - [skaffold](https://skaffold.dev/)
 
