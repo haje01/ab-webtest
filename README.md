@@ -9,7 +9,7 @@ Airbridge Web SDK 를 이용한 테스트
 - [minikube](https://minikube.sigs.k8s.io/docs/start/)
 - [skaffold](https://skaffold.dev/)
 
-2. Airbridge 앱 정보를 Base64 인코딩:
+2. Airbridge 에서 앱 생성 후, 앱 정보를 Base64 인코딩:
 
 ```bash
 echo -n '<앱 이름>' | base64
