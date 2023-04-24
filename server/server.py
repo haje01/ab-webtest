@@ -1,9 +1,15 @@
+import os 
+
 from flask import Flask, render_template, request 
 
 app = Flask(__name__)
 
-APP_NAME = 'bar'
-SDK_TOKEN = '8ba0712e4d7f4926bc4897664d210b57'
+ABTEST_APP = os.environ.get('ABTEST_APP')
+
+APP_NAME = os.environ.get('ABTEST_APP')
+assert APP_NAME is not None
+SDK_TOKEN = os.environ.get('ABTEST_TOKEN')
+assert SDK_TOKEN is not None
 
 events = [
     # 로그인

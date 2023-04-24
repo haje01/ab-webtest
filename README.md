@@ -3,9 +3,15 @@ Airbridge Web SDK 를 이용한 테스트
 
 ## 준비 및 실행
 
-설치할 것: minikube, skaffold
+설치할 것: 
+- [minikube](https://minikube.sigs.k8s.io/docs/start/)
+- [skaffold](https://skaffold.dev/)
 
-실행 방법 
+환경 변수 설정:
+- `ABTEST_APP` - 앱 이름
+- `ABTEST_TOKEN` - 앱의 Web SDK 토큰
+
+실행 방법:
 
 ```
 skafffold dev
