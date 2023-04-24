@@ -4,8 +4,6 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-ABTEST_APP = os.environ.get('ABTEST_APP')
-
 APP_NAME = os.environ.get('ABTEST_APP')
 assert APP_NAME is not None
 SDK_TOKEN = os.environ.get('ABTEST_TOKEN')
