@@ -2,10 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>{{ game_id }}</title>
+        <title>{{ name }}</title>
     </head>
     <body>
-        <h1>{{ game_id }}</h1>
+        <h1>{{ name }}</h1>
         <script>
         (function(a_,i_,r_,_b,_r,_i,_d,_g,_e){if(!a_[_b]){var d={queue:[],get isSDKEnabled(){return!1}};_r.concat(_i).forEach(function(a){var e=a.split("."),q=e.pop();e.reduce(function(m,n){return m[n]=m[n]||{}},d)[q]=function(){d.queue.push([a,arguments])}});a_[_b]=d;var f=i_.getElementsByTagName(r_)[0],c=i_.createElement(r_);c.onerror=function(){d.queue.filter(function(a){return 0<=_i.indexOf(a[0])}).forEach(function(a){a=a[1];a=a[a.length-1];"function"===typeof a&&a("error occur when load airbridge")})};c.async=1;c.src="//static.airbridge.io/sdk/latest/airbridge.min.js";"complete"===i_.readyState?f.parentNode.insertBefore(c,f):i_.addEventListener("readystatechange",function e(){"complete"===i_.readyState&&(i_.removeEventListener("readystatechange",e),f.parentNode.insertBefore(c,f))})}})(window,document,"script","airbridge","init startTracking fetchResource setBanner setDownload setDownloads openDeeplink setDeeplinks sendWeb setUserAgent setUserAlias addUserAlias setMobileAppData setUserId setUserEmail setUserPhone setUserAttributes clearUser setDeviceAlias removeDeviceAlias clearDeviceAlias setDeviceIFV setDeviceIFA setDeviceGAID events.send events.signIn events.signUp events.signOut events.purchased events.addedToCart events.productDetailsViewEvent events.homeViewEvent events.productListViewEvent events.searchResultViewEvent".split(" "),["events.wait","createTouchpoint"]);
 
@@ -15,9 +15,8 @@
             webToken: '{{ sdk_token}}',
             user: {
                 externalUserID: '{{ game_id }}',
-                alias: {"PlatformID": '{{ plat_id }}' },
-                externalUserEmail: '{{ user_email }}',
-                externalUserPhone: '{{ user_phone }}',
+                alias: {"PlatformId": '{{ plat_id }}'},
+                externalUserEmail: '{{ email }}',
                 attributes: {
                     age_group: {{ age_group }},
                     gender: '{{ gender }}'
