@@ -9,13 +9,13 @@ Airbridge Web SDK 를 이용한 테스트
 
 2. Airbridge 앱 정보를 Base64 인코딩:
 
-```sh
+```bash
 echo -n '<앱 이름>' | base64
 echo -n '<WebSDK 토큰>' | base64
 ```
 
 3. 2 의 출력물로 Secret 생성:
-```yaml
+```bash
 kubectl apply -f - <<EOF 
 apiVersion: v1
 kind: Secret 
@@ -29,7 +29,7 @@ EOF
 ```
 
 Skaffold 로 실행:
-```
+```bash
 skaffold deploy
 ```
 
