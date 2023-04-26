@@ -11,5 +11,5 @@ spec:
         spec:
           containers:
           - name: client
-            image: client
+            image: abtest-client
           restartPolicy: Never
