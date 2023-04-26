@@ -2,9 +2,9 @@ apiVersion: skaffold/v4beta3
 kind: Config
 build:
   artifacts:
-  - image: server
+  - image: abtest-server
     context: server
-  - image: client
+  - image: abtest-client
     context: client
 manifests:
   rawYaml:
