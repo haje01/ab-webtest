@@ -26,7 +26,7 @@ metadata:
 type: Opaque 
 data:
     app: <인코딩된 앱 이름>
-    token: <인코딩된 WebSDK 토큰>
+    token: <인코딩된 Web SDK 토큰>
 EOF
 ```
 
@@ -39,4 +39,4 @@ skaffold dev --default-repo=docker.io/haje01 # 또는 자신의 컨테이너 레
 
 - 클라이언트용 컨테이너 이미지에는 [Playwright](https://playwright.dev/) 를 통해 Headless Chrome 이 설치
 - 클라이언트는 가짜 유저 정보 생성 후 Playwright 를 통해 Flask 서버에 이벤트 호출 요청 
-- [Flask](https://flask.palletsprojects.com/en/2.3.x/) 서버는 Airbridge WebSDK 을 이용한 이벤트 호출 페이지를 반환
+- [Flask](https://flask.palletsprojects.com/en/2.3.x/) 서버는 Airbridge Web SDK 을 이용한 이벤트 호출 페이지를 반환
