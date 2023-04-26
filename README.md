@@ -1,5 +1,7 @@
 # ab-webtest
-쿠버네티스 환경에서 [Airbridge](https://www.ab180.co/solutions/airbridge) 의 Web SDK 를 이용한 테스트. 실제 서비스 전 가상의 유저 이벤트를 발생시켜 Airbridge 데이터 파이프라인을 구축을 준비할 수 있다.
+쿠버네티스 환경에서 [Airbridge](https://www.ab180.co/solutions/airbridge) 의 Web SDK 를 이용한 테스트 샘플. 
+
+실제 서비스 전 가상의 유저 이벤트를 발생시켜 Airbridge 데이터 파이프라인을 구축을 준비할 수 있다.
 
 ## 준비 및 실행
 
