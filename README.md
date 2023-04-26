@@ -34,7 +34,7 @@ EOF
 
 Skaffold 로 실행:
 ```bash
-skaffold dev --default-repo=docker.io/haje01 # 또는 자신의 컨테이너 레포지토리 명
+skaffold dev --default-repo=docker.io/haje01 # 또는 자신의 이미지 레포지토리 명
 ```
 
 ## 설명
