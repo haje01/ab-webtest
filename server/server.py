@@ -168,7 +168,7 @@ def user():
                            age_group='30', gender='Male', events=events)
 
 
-@app.route('/health')
+@app.route('/healthz')
 def health():
     return 'ok'
 
