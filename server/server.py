@@ -168,5 +168,10 @@ def user():
                            age_group='30', gender='Male', events=events)
 
 
+@app.route('/health')
+def health():
+    return 'ok'
+
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
