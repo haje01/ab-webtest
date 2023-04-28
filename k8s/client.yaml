@@ -12,4 +12,11 @@ spec:
           containers:
           - name: client
             image: abtest-client
+            resources:
+              requests:
+                memory: "8Gi"
+                cpu: "1000m"
+              limits:
+                memory: "8Gi"
+                cpu: "1000m"
           restartPolicy: Never
